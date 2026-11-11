@@ -116,6 +116,7 @@ p{margin:0 0 1em}
 .collage figure{position:absolute;margin:0;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--paper-2)}
 .collage figure img{width:100%;height:100%;object-fit:cover}
 .collage .c1{left:8%;top:0;width:62%;height:78%;z-index:2}
+.collage .c1 figcaption{top:14px;bottom:auto}
 .collage .c2{right:0;top:12%;width:42%;height:42%;z-index:3;border:6px solid var(--paper)}
 .collage .c3{right:6%;bottom:0;width:48%;height:40%;z-index:1}
 .collage figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,253,248,.94);color:var(--ink);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
@@ -124,7 +125,7 @@ p{margin:0 0 1em}
 .slip .row{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted);padding:6px 0;border-bottom:1px dashed var(--rule)}
 .slip .row b{color:var(--ink);font-weight:700}
 .slip .amt{font-family:var(--serif);font-size:2.3rem;color:var(--money);font-weight:500;letter-spacing:-.03em;line-height:1;margin:4px 0 10px}
-.slip .stamp{position:absolute;right:14px;top:14px;border:2px solid var(--green);color:var(--green-d);border-radius:6px;font-size:.66rem;font-weight:800;letter-spacing:.14em;padding:3px 7px;transform:rotate(8deg)}
+.slip .stamp{position:absolute;right:16px;top:-14px;background:var(--card);border:2px solid var(--green);color:var(--green-d);border-radius:6px;font-size:.66rem;font-weight:800;letter-spacing:.14em;padding:3px 7px;transform:rotate(8deg)}
 .slip small{font-size:.7rem;color:var(--muted);display:block;margin-top:8px}
 @media(max-width:980px){
   .hero-grid{grid-template-columns:1fr;gap:40px}
