@@ -6,6 +6,7 @@
   --h:'Sora',system-ui,sans-serif; --b:'Inter',system-ui,sans-serif;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--b);color:var(--body);background:var(--bg);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
