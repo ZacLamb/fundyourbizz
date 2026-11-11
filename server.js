@@ -27,6 +27,13 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: '7d' }));
+// Photo not downloaded at build time -> fall back to its source URL
+const photos = require('./lib/photos');
+app.get('/img/photos/:name.jpeg', (req, res) => {
+  const src = photos[req.params.name];
+  if (!src) return res.status(404).end();
+  res.redirect(302, src);
+});
 app.use(express.urlencoded({ extended: false, limit: '2mb' }));
 app.use(express.json({ limit: '2mb' }));
 

@@ -1,134 +1,147 @@
 <%- include('partials/head') %>
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">Business funding · $5K to $300K</p>
-      <h1>Capital that moves at the speed of your business.</h1>
-      <p class="lead">Fund Your Bizz gets small businesses working capital through revenue-based financing — payments that flex with your sales, a fixed total cost, and a real person guiding you from application to funding.</p>
-      <div class="hero-actions">
-        <a href="/apply" class="btn btn-green btn-lg">Apply in 10 Minutes</a>
-        <a href="/how-it-works" class="btn btn-ghost-light btn-lg">How It Works</a>
+    <div>
+      <p class="kicker load">Business funding · $5K to $300K</p>
+      <h1 class="load d1">Capital for the businesses that keep <span class="uline"><em>Main Street</em><svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 70 4, 160 4, 297 10"/></svg></span> open.</h1>
+      <p class="lead load d2">Revenue-based financing with payments that flex with your sales, a fixed total cost you know up front, and a real advisor who answers the phone.</p>
+      <div class="hero-actions load d3">
+        <a href="/apply" class="btn btn-green btn-lg">Apply in 10 Minutes <span class="arr">→</span></a>
+        <a href="/how-it-works" class="btn btn-outline btn-lg">How It Works</a>
       </div>
-      <ul class="hero-points">
-        <li>No collateral needed for most programs</li>
-        <li>Decisions typically within days</li>
-        <li>Terms from 3 to 12 months</li>
-      </ul>
+      <div class="trust load d4">
+        <div><strong>$300K</strong><span>max funding</span></div>
+        <div><strong>3–12 mo</strong><span>estimated terms</span></div>
+        <div><strong>4</strong><span>bank statements to apply</span></div>
+      </div>
     </div>
-    <div class="hero-card" aria-label="Funding at a glance">
-      <div class="hc-top">
-        <span>Funding range</span>
-        <strong>$5,000 – $300,000</strong>
+    <div class="collage load d2" aria-hidden="true">
+      <figure class="c1"><img src="/img/photos/bakery.jpeg" alt="" width="896" height="1120"><figcaption>Working capital</figcaption></figure>
+      <figure class="c2"><img src="/img/photos/mechanic.jpeg" alt="" width="1024" height="688"><figcaption>Equipment</figcaption></figure>
+      <figure class="c3"><img src="/img/photos/florist.jpeg" alt="" width="896" height="1120"><figcaption>Inventory</figcaption></figure>
+      <div class="slip">
+        <span class="stamp">FUNDED</span>
+        <div class="row"><span>Deposit to</span><b>Business checking</b></div>
+        <div class="amt">$5K–$300K</div>
+        <div class="row"><span>Payments</span><b>Daily or weekly</b></div>
+        <div class="row" style="border:0"><span>Total cost</span><b>Fixed at signing</b></div>
       </div>
-      <div class="hc-row"><span>Estimated term</span><strong>3 – 12 months</strong></div>
-      <div class="hc-row"><span>Payments</span><strong>Daily or weekly, auto-debited</strong></div>
-      <div class="hc-row"><span>Total cost</span><strong>Fixed upfront</strong></div>
-      <div class="hc-row"><span>What you need</span><strong>4 months of bank statements</strong></div>
-      <a href="/apply" class="btn btn-navy btn-block">Check My Options →</a>
     </div>
   </div>
 </section>
 
-<section class="strip">
-  <div class="wrap strip-in">
-    <div><strong>$5K–$300K</strong><span>in upfront capital</span></div>
-    <div><strong>3–12 mo</strong><span>estimated repayment</span></div>
-    <div><strong>1 application</strong><span>multiple funding options</span></div>
-    <div><strong>NYC-based</strong><span>serving businesses nationwide</span></div>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <% const inds = ['Restaurants','Auto repair','Retail','Construction','Trucking','Salons & spas','Medical & dental','Landscaping','Florists','Bakeries','E-commerce','Contractors']; %>
+    <% for (let k = 0; k < 2; k++) { inds.forEach(i => { %><span><%= i %></span><% }) } %>
   </div>
-</section>
+</div>
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow dark">What we fund</p>
-      <h2>Money for the moments that matter.</h2>
-      <p>Whether you're covering a slow month or going after a big opportunity, we match you with funding sized to your revenue.</p>
+    <div class="sec-head rv">
+      <p class="kicker">What we fund</p>
+      <h2>Money for the moments that <em>matter.</em></h2>
+      <p>Whether you're covering a slow month or going after a big opportunity, we match you with funding sized to your revenue — not a bank's checklist.</p>
     </div>
-    <div class="cards cards-3">
-      <article class="card">
-        <div class="ic">⟳</div>
-        <h3>Working capital</h3>
-        <p>Cover payroll, rent, and day-to-day expenses without draining your cash reserves.</p>
-      </article>
-      <article class="card">
-        <div class="ic">▤</div>
-        <h3>Inventory &amp; supplies</h3>
-        <p>Stock up ahead of your busy season or take advantage of bulk pricing from suppliers.</p>
-      </article>
-      <article class="card">
-        <div class="ic">⚙</div>
-        <h3>Equipment</h3>
-        <p>Repair, replace, or upgrade the equipment your business runs on.</p>
-      </article>
-      <article class="card">
-        <div class="ic">↗</div>
-        <h3>Expansion</h3>
-        <p>Open a new location, hire staff, or launch a new product line.</p>
-      </article>
-      <article class="card">
-        <div class="ic">✦</div>
-        <h3>Marketing</h3>
-        <p>Fund campaigns that bring in new customers while revenue catches up.</p>
-      </article>
-      <article class="card">
-        <div class="ic">⚑</div>
-        <h3>Emergencies</h3>
-        <p>Handle unexpected repairs, tax bills, or gaps in cash flow fast.</p>
-      </article>
+    <div class="uses">
+      <a href="/apply" class="use w7 rv"><img src="/img/photos/kitchen.jpeg" alt="Restaurant owner plating a dish during service" loading="lazy"><span class="tag">Working capital</span><div class="txt"><h3>Keep the line moving</h3><p>Payroll, rent and suppliers covered while revenue catches up — no draining your reserves.</p></div></a>
+      <a href="/apply" class="use w5 rv d1"><img src="/img/photos/mechanic.jpeg" alt="Auto shop owner in his garage" loading="lazy"><span class="tag">Equipment</span><div class="txt"><h3>Fix it, replace it, upgrade it</h3><p>The lift, the oven, the truck — the equipment your business runs on.</p></div></a>
+      <a href="/apply" class="use w4 rv"><img src="/img/photos/boutique.jpeg" alt="Boutique owner flipping the open sign" loading="lazy"><span class="tag">Inventory</span><div class="txt"><h3>Stock up for the season</h3><p>Buy ahead and take the bulk pricing.</p></div></a>
+      <a href="/apply" class="use w8 rv d1"><img src="/img/photos/contractor.jpeg" alt="Contractor reviewing plans with a crew member" loading="lazy"><span class="tag">Expansion</span><div class="txt"><h3>Say yes to the bigger job</h3><p>Hire, mobilize and buy materials for the contract that grows your business — before the first invoice clears.</p></div></a>
     </div>
   </div>
 </section>
 
 <section class="sec sec-alt">
   <div class="wrap split">
-    <div>
-      <p class="eyebrow dark">Revenue-based financing</p>
-      <h2>Payments that rise and fall with your sales.</h2>
-      <p>With revenue-based financing, you receive capital upfront and repay it through small, automatic daily or weekly payments tied to your revenue. Your total payback is fixed from day one — if repayment takes a little longer during a slow stretch, the amount you owe doesn't grow.</p>
+    <div class="rv">
+      <p class="kicker">Revenue-based financing</p>
+      <h2>Payments that rise and fall <em>with your sales.</em></h2>
+      <p>You receive capital up front and repay it through small automatic daily or weekly payments tied to your revenue. The total you pay back is fixed from day one — a slow stretch doesn't make it grow.</p>
       <ul class="checks">
         <li>$5,000 to $300,000 in upfront capital</li>
         <li>Estimated 3 to 12 month payment period</li>
         <li>Fixed total payment amount</li>
         <li>Approval based on business performance, not just credit</li>
       </ul>
-      <a href="/revenue-based-financing" class="btn btn-navy">Learn About RBF</a>
+      <a href="/revenue-based-financing" class="link">How revenue-based financing works →</a>
     </div>
-    <div class="steps-mini">
-      <div class="sm"><span>1</span><div><h4>Apply online</h4><p>Tell us about your business and upload four months of bank statements.</p></div></div>
-      <div class="sm"><span>2</span><div><h4>Review your offers</h4><p>A funding advisor walks you through the amount, term and payment options.</p></div></div>
-      <div class="sm"><span>3</span><div><h4>Get funded</h4><p>Sign your agreement and receive funds directly in your business account.</p></div></div>
+    <div class="chart-card rv d1" data-chart>
+      <div class="chart-legend"><span><i style="background:var(--paper-2);border:1px solid var(--rule)"></i>Monthly revenue</span><span><i style="background:var(--green)"></i>Your payments</span></div>
+      <div class="bars">
+        <% [62, 80, 48, 92, 70, 100].forEach(h => { %><div class="b"><div class="rev" style="height:<%= h %>%"></div><div class="pay" style="height:<%= Math.round(h*0.22) %>%"></div></div><% }) %>
+      </div>
+      <div class="months"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span></div>
+      <p class="chart-note">Illustration only. When sales dip, payments can adjust with them — your total payback stays the same.</p>
     </div>
   </div>
 </section>
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow dark">Why Fund Your Bizz</p>
-      <h2>Straight answers and a person who picks up the phone.</h2>
+    <div class="sec-head rv">
+      <p class="kicker">How it works</p>
+      <h2>From application to funded, <em>in four steps.</em></h2>
     </div>
-    <div class="cards cards-4">
-      <article class="card plain"><h3>Customized plans</h3><p>Funding amounts and terms shaped around your revenue and goals, not a one-size-fits-all product.</p></article>
-      <article class="card plain"><h3>Simple approval</h3><p>One short application and your bank statements — no stacks of tax returns to start.</p></article>
-      <article class="card plain"><h3>Responsible funding</h3><p>We look at what your business can comfortably repay before recommending an amount.</p></article>
-      <article class="card plain"><h3>Expert guidance</h3><p>A dedicated advisor explains every offer so you know exactly what you're signing.</p></article>
+    <div class="steps">
+      <div class="step-i rv"><span class="num">01</span><h3>Apply online</h3><p>Ten minutes. Business details, owner info and your signature.</p></div>
+      <div class="step-i rv d1"><span class="num">02</span><h3>Upload statements</h3><p>Your last four months of business bank statements.</p></div>
+      <div class="step-i rv d2"><span class="num">03</span><h3>Review offers</h3><p>Your advisor walks you through amount, term and total cost.</p></div>
+      <div class="step-i rv d3"><span class="num">04</span><h3>Get funded</h3><p>Sign, and funds go straight to your business account.</p></div>
     </div>
   </div>
 </section>
 
 <section class="sec sec-alt">
-  <div class="wrap faq-wrap">
-    <div class="sec-head left">
-      <p class="eyebrow dark">Common questions</p>
-      <h2>Before you apply</h2>
-      <a href="/faq" class="link">See all FAQs →</a>
+  <div class="wrap split">
+    <div class="rv">
+      <div class="photo-frame">
+        <img src="/img/photos/advisor.jpeg" alt="Fund Your Bizz funding advisor on a call in the New York office" loading="lazy" style="aspect-ratio:5/4">
+        <div class="photo-badge"><strong>A real person.</strong><span>One advisor from application to funding.</span></div>
+      </div>
     </div>
-    <div class="faq">
-      <details><summary>What do I need to apply?</summary><p>Basic business and owner information plus your last four months of business bank statements. The application takes about 10 minutes.</p></details>
-      <details><summary>How long does approval take?</summary><p>Many applications are reviewed within a few business days. Larger or more complex requests can take up to a couple of weeks.</p></details>
-      <details><summary>How do I qualify?</summary><p>We look at your business revenue, time in business, credit history and the type of funding you need.</p></details>
-      <details><summary>What if I miss a payment?</summary><p>Contact us right away. Depending on your situation, options may include restructuring your payments or a short grace period.</p></details>
+    <div class="rv d1">
+      <p class="kicker">Why Fund Your Bizz</p>
+      <h2>Straight answers from <em>people who pick up.</em></h2>
+      <p>We're a New York team that works with small business owners every day. No call centers and no fine-print surprises — just a clear offer and someone who explains it.</p>
+      <div class="promise">
+        <div><h4>Customized plans</h4><p>Amounts and terms shaped around your revenue.</p></div>
+        <div><h4>Simple approval</h4><p>One application and your bank statements to start.</p></div>
+        <div><h4>Responsible funding</h4><p>We size offers to what you can comfortably repay.</p></div>
+        <div><h4>Total cost up front</h4><p>See the full payback before you sign anything.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap split top">
+    <div class="quick rv" id="quick">
+      <p class="kicker">Start here</p>
+      <h3>How much are you looking for?</h3>
+      <div class="out" id="qOut">$50,000</div>
+      <input type="range" id="qAmt" min="5000" max="300000" step="5000" value="50000" aria-label="Funding amount">
+      <div class="scale"><span>$5K</span><span>$300K</span></div>
+      <p style="margin:22px 0 8px;font-weight:700;color:var(--ink);font-size:.9rem">What's it for?</p>
+      <div class="opts" id="qUse">
+        <% ['Working capital','Inventory','Equipment','Expansion','Payroll','Marketing'].forEach((u,i) => { %>
+        <label class="pill"><input type="radio" name="q_use" value="<%= u %>" <%= i===0?'checked':'' %>><span><%= u %></span></label>
+        <% }) %>
+      </div>
+      <a href="/apply" class="btn btn-green btn-block btn-lg" id="qGo">Continue to Application <span class="arr">→</span></a>
+      <p class="fine" style="margin:12px 0 0;text-align:center">We'll carry these answers into your application.</p>
+    </div>
+    <div class="rv d1">
+      <p class="kicker">Common questions</p>
+      <h2>Before you <em>apply.</em></h2>
+      <div class="faq" style="margin-top:28px">
+        <details><summary>What do I need to apply?</summary><p>Basic business and owner information plus your last four months of business bank statements. The application takes about 10 minutes.</p></details>
+        <details><summary>How long does approval take?</summary><p>Many applications are reviewed within a few business days. Larger or more complex requests can take up to a couple of weeks.</p></details>
+        <details><summary>How do I qualify?</summary><p>We look at your business revenue, time in business, credit history and the type of funding you need.</p></details>
+        <details><summary>What if I miss a payment?</summary><p>Contact us right away. Depending on your situation, options may include restructuring your payments or a short grace period.</p></details>
+      </div>
+      <p style="margin-top:24px"><a href="/faq" class="link">See all FAQs →</a></p>
     </div>
   </div>
 </section>

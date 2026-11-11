@@ -17,6 +17,15 @@
   form.signature_date.value = iso;
   form.querySelectorAll('input[type=date]').forEach((d) => { if (d.name !== 'signature_date' && d.name !== 'second_owner_signature_date') d.max = iso; });
 
+  // ---------- Prefill from the homepage quick-start ----------
+  try {
+    const q = JSON.parse(sessionStorage.getItem('fyb_quick') || 'null');
+    if (q) {
+      if (q.amount && !form.requested_amount.value) form.requested_amount.value = Number(q.amount).toLocaleString('en-US');
+      if (q.use && !form.use_of_funds.value) form.use_of_funds.value = q.use;
+    }
+  } catch (e) {}
+
   // ---------- Masks ----------
   const masks = {
     phone: (v) => { const d = v.replace(/\D/g, '').slice(0, 10); return d.length > 6 ? `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}` : d.length > 3 ? `(${d.slice(0, 3)}) ${d.slice(3)}` : d; },

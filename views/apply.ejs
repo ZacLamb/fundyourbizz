@@ -5,10 +5,11 @@
   const stateOpts = '<option value="">Select</option>' + states.map(s => `<option>${s}</option>`).join('');
 %>
 <section class="apply-hero">
+  <div class="bg"><img src="/img/photos/bakery.jpeg" alt=""></div>
   <div class="wrap">
-    <p class="eyebrow">Secure application</p>
-    <h1>Apply for business funding</h1>
-    <p class="lead">About 10 minutes. Have your EIN and last four months of business bank statements ready.</p>
+    <p class="kicker light load">Secure application</p>
+    <h1 class="load d1">Apply for business <em style="color:#8EE6B1">funding.</em></h1>
+    <p class="lead load d2">About 10 minutes. Have your EIN and last four months of business bank statements ready.</p>
   </div>
 </section>
 
@@ -156,8 +157,8 @@
 
       <p class="form-msg" id="formMsg" role="alert"></p>
       <div class="nav-btns">
-        <button type="button" class="btn btn-outline" id="backBtn" hidden>← Back</button>
-        <button type="button" class="btn btn-green" id="nextBtn">Continue →</button>
+        <button type="button" class="btn btn-outline btn-sm" id="backBtn" hidden>← Back</button>
+        <button type="button" class="btn btn-green" id="nextBtn">Continue <span class="arr">→</span></button>
         <button type="submit" class="btn btn-green" id="submitBtn" hidden>Submit Application</button>
       </div>
       <div class="uploading" id="uploading" hidden>
@@ -167,5 +168,5 @@
     </form>
   </div>
 </section>
-<script src="/js/apply.js?v=3" defer></script>
+<script src="/js/apply.js?v=5" defer></script>
 <%- include('partials/foot') %>

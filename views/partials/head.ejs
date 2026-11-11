@@ -11,13 +11,13 @@
   <meta property="og:title" content="<%= meta.title || site.name %>">
   <meta property="og:description" content="<%= meta.description || '' %>">
   <meta property="og:url" content="<%= site.url %><%= path === '/' ? '' : path %>">
-  <meta property="og:image" content="<%= site.logo %>">
-  <meta name="theme-color" content="#0B1B4D">
+  <meta property="og:image" content="<%= site.url %>/img/photos/bakery.jpeg">
+  <meta name="theme-color" content="#0E1A3A">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=4">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=5">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,9 +35,15 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span><i class="dot"></i>Funding advisors available Mon–Fri, 9–6 ET</span>
+    <span class="hide-sm"><%= site.address.street %>, New York · <a href="<%= site.phoneHref %>"><%= site.phone %></a></span>
+  </div>
+</div>
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="/" aria-label="Fund Your Bizz home"><img src="<%= site.logo %>" alt="Fund Your Bizz" width="120" height="71"></a>
+    <a class="brand" href="/" aria-label="Fund Your Bizz home"><img src="<%= site.logo %>" alt="Fund Your Bizz" width="88" height="52"></a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     <nav id="menu" class="menu">
       <a href="/revenue-based-financing" class="<%= path==='/revenue-based-financing'?'on':'' %>">Revenue-Based Financing</a>
@@ -46,8 +52,7 @@
       <a href="/about" class="<%= path==='/about'?'on':'' %>">About</a>
       <a href="/faq" class="<%= path==='/faq'?'on':'' %>">FAQ</a>
       <a href="/contact" class="<%= path==='/contact'?'on':'' %>">Contact</a>
-      <a href="<%= site.phoneHref %>" class="nav-phone"><%= site.phone %></a>
-      <a href="/apply" class="btn btn-green btn-sm">Apply Now</a>
+      <a href="/apply" class="btn btn-green btn-sm">Apply Now <span class="arr">→</span></a>
     </nav>
   </div>
 </header>

@@ -5,6 +5,7 @@
   "description": "Fund Your Bizz website with a GHL-connected funding application",
   "main": "server.js",
   "scripts": {
+    "build": "node scripts/fetch-photos.js",
     "start": "node server.js"
   },
   "engines": {
