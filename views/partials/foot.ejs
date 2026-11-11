@@ -1,0 +1,52 @@
+</main>
+<% if (path !== '/apply' && path !== '/apply/thank-you') { %>
+<section class="cta-band">
+  <div class="wrap cta-in">
+    <div>
+      <h2>See what your business qualifies for.</h2>
+      <p>One application, about 10 minutes. Checking your options won't commit you to anything.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="/apply" class="btn btn-green btn-lg">Start Your Application</a>
+      <a href="<%= site.phoneHref %>" class="btn btn-ghost-light btn-lg">Call <%= site.phone %></a>
+    </div>
+  </div>
+</section>
+<% } %>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <img src="<%= site.logo %>" alt="Fund Your Bizz" width="110" height="65" class="foot-logo">
+      <p>Working capital for small businesses — $5,000 to $300,000, with terms built around your revenue.</p>
+    </div>
+    <div>
+      <h4>Funding</h4>
+      <a href="/revenue-based-financing">Revenue-Based Financing</a>
+      <a href="/services">All Services</a>
+      <a href="/how-it-works">How It Works</a>
+      <a href="/apply">Apply Online</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="/about">About</a>
+      <a href="/faq">FAQ</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <a href="<%= site.phoneHref %>"><%= site.phone %></a>
+      <a href="mailto:<%= site.email %>"><%= site.email %></a>
+      <p><%= site.address.street %><br><%= site.address.city %>, <%= site.address.state %> <%= site.address.zip %></p>
+      <p class="muted"><%= site.hours %></p>
+    </div>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© <%= new Date().getFullYear() %> Fund Your Bizz. All rights reserved.</p>
+    <p class="muted">Funding is subject to review and approval. Revenue-based financing is a purchase of future receivables, not a loan. Terms vary by business.</p>
+  </div>
+</footer>
+<script src="/js/main.js" defer></script>
+</body>
+</html>

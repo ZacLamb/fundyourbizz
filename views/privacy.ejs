@@ -1,0 +1,24 @@
+<%- include('partials/head') %>
+<section class="page-hero"><div class="wrap"><p class="eyebrow">Legal</p><h1>Privacy Policy</h1></div></section>
+<section class="sec"><div class="wrap narrow prose">
+  <p>This policy explains how Fund Your Bizz ("we," "us") collects, uses and protects information submitted through fundyourbizz.com.</p>
+  <h2>Information we collect</h2>
+  <p>When you apply for funding or contact us, we collect the information you provide, including business details (legal name, DBA, EIN, address, industry, revenue), owner details (name, address, date of birth, Social Security number, estimated credit score, contact information), bank statements, and your electronic signature. We also collect basic technical information such as IP address and browser type.</p>
+  <h2>How we use it</h2>
+  <ul>
+    <li>To evaluate your funding request and present offers</li>
+    <li>To verify your identity and business, including obtaining credit and background reports you authorize</li>
+    <li>To share your application with funding partners for the purpose of evaluating your request</li>
+    <li>To contact you by phone, text and email about your application</li>
+    <li>To comply with legal obligations and prevent fraud</li>
+  </ul>
+  <h2>Text messages</h2>
+  <p>If you provide your phone number, you consent to receive text messages about your application (approximately 10 messages per month). Message and data rates may apply. Reply STOP to opt out or HELP for help. Mobile numbers and SMS consent are never sold or shared with third parties for their own marketing.</p>
+  <h2>How we protect it</h2>
+  <p>Applications are transmitted over encrypted (HTTPS) connections and stored in access-restricted systems. Only staff and partners who need the information to process your request can access it.</p>
+  <h2>Your choices</h2>
+  <p>You may ask us to access, correct or delete your information, or opt out of communications, by emailing <a href="mailto:<%= site.email %>"><%= site.email %></a> or calling <%= site.phone %>.</p>
+  <h2>Contact</h2>
+  <p>Fund Your Bizz, <%= site.address.street %>, <%= site.address.city %>, <%= site.address.state %> <%= site.address.zip %> · <%= site.phone %></p>
+</div></section>
+<%- include('partials/foot') %>

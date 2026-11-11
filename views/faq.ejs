@@ -1,0 +1,28 @@
+<%- include('partials/head') %>
+<section class="page-hero"><div class="wrap">
+  <p class="eyebrow">FAQ</p>
+  <h1>Frequently asked questions</h1>
+  <p class="lead">Can't find your answer? Call us at <a href="<%= site.phoneHref %>"><%= site.phone %></a>.</p>
+</div></section>
+<section class="sec"><div class="wrap narrow">
+  <div class="faq">
+    <details open><summary>How much can I get?</summary><p>Funding ranges from $5,000 to $300,000 depending on your monthly revenue, time in business and overall profile.</p></details>
+    <details><summary>What do I need to apply?</summary><p>Business and owner details, plus your last four months of business bank statements. The online application takes about 10 minutes.</p></details>
+    <details><summary>How do I qualify?</summary><p>Qualification is based on your credit history, business revenue and the type of funding you need. Revenue-based financing puts more weight on how your business is performing than on credit alone.</p></details>
+    <details><summary>How long does approval take?</summary><p>It can take anywhere from a few business days to a couple of weeks, depending on the type and size of the request.</p></details>
+    <details><summary>What are your rates?</summary><p>Rates vary by product, your credit profile and market conditions. Your advisor will show you the total cost of every offer before you sign.</p></details>
+    <details><summary>How do payments work?</summary><p>For revenue-based financing, payments are auto-debited daily or weekly from your business account and may fluctuate with your revenue. Your total payback amount is fixed.</p></details>
+    <details><summary>What happens if I miss a payment?</summary><p>Contact us right away. Depending on your circumstances we may be able to restructure your payments or offer a grace period.</p></details>
+    <details><summary>Is my information secure?</summary><p>Your application is sent over an encrypted connection and used only to evaluate your funding request. See our <a href="/privacy-policy">Privacy Policy</a>.</p></details>
+    <details><summary>Will applying affect my credit?</summary><p>Your advisor can explain how credit is reviewed for your specific program before any funding decision is made.</p></details>
+  </div>
+</div></section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much can I get?","acceptedAnswer":{"@type":"Answer","text":"Funding ranges from $5,000 to $300,000 depending on your monthly revenue, time in business and overall profile."}},
+{"@type":"Question","name":"What do I need to apply?","acceptedAnswer":{"@type":"Answer","text":"Business and owner details, plus your last four months of business bank statements."}},
+{"@type":"Question","name":"How long does approval take?","acceptedAnswer":{"@type":"Answer","text":"From a few business days to a couple of weeks, depending on the type and size of the request."}},
+{"@type":"Question","name":"How do payments work?","acceptedAnswer":{"@type":"Answer","text":"Payments are auto-debited daily or weekly and may fluctuate with revenue. The total payback amount is fixed."}}
+]}
+</script>
+<%- include('partials/foot') %>

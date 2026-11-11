@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= meta.title || site.name %></title>
+  <meta name="description" content="<%= meta.description || '' %>">
+  <link rel="canonical" href="<%= site.url %><%= path === '/' ? '' : path %>">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="<%= site.name %>">
+  <meta property="og:title" content="<%= meta.title || site.name %>">
+  <meta property="og:description" content="<%= meta.description || '' %>">
+  <meta property="og:url" content="<%= site.url %><%= path === '/' ? '' : path %>">
+  <meta property="og:image" content="<%= site.logo %>">
+  <meta name="theme-color" content="#0B1B4D">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "<%= site.name %>",
+    "url": "<%= site.url %>",
+    "logo": "<%= site.logo %>",
+    "telephone": "+1-516-246-1215",
+    "email": "<%= site.email %>",
+    "address": { "@type": "PostalAddress", "streetAddress": "<%= site.address.street %>", "addressLocality": "<%= site.address.city %>", "addressRegion": "<%= site.address.state %>", "postalCode": "<%= site.address.zip %>", "addressCountry": "US" },
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "areaServed": "US"
+  }
+  </script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Fund Your Bizz home"><img src="<%= site.logo %>" alt="Fund Your Bizz" width="120" height="71"></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    <nav id="menu" class="menu">
+      <a href="/revenue-based-financing" class="<%= path==='/revenue-based-financing'?'on':'' %>">Revenue-Based Financing</a>
+      <a href="/services" class="<%= path==='/services'?'on':'' %>">Services</a>
+      <a href="/how-it-works" class="<%= path==='/how-it-works'?'on':'' %>">How It Works</a>
+      <a href="/about" class="<%= path==='/about'?'on':'' %>">About</a>
+      <a href="/faq" class="<%= path==='/faq'?'on':'' %>">FAQ</a>
+      <a href="/contact" class="<%= path==='/contact'?'on':'' %>">Contact</a>
+      <a href="<%= site.phoneHref %>" class="nav-phone"><%= site.phone %></a>
+      <a href="/apply" class="btn btn-green btn-sm">Apply Now</a>
+    </nav>
+  </div>
+</header>
+<main id="main">

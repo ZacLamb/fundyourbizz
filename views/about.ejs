@@ -1,0 +1,29 @@
+<%- include('partials/head') %>
+<section class="page-hero"><div class="wrap">
+  <p class="eyebrow">About us</p>
+  <h1>Built to help small businesses keep moving.</h1>
+  <p class="lead">Fund Your Bizz is a New York–based business funding company. We help owners across the country get the working capital they need — quickly, clearly and with guidance at every step.</p>
+</div></section>
+
+<section class="sec"><div class="wrap split">
+  <div>
+    <h2>Our approach</h2>
+    <p>Traditional bank loans can take months and often aren't built for businesses with seasonal or growing revenue. We focus on what your business is doing today. By looking at your actual bank activity, we can match you with funding that fits your cash flow instead of working against it.</p>
+    <p>Every applicant works with a dedicated funding advisor who explains the amount, the term, the payment schedule and the total cost before anything is signed.</p>
+  </div>
+  <div class="cards cards-1">
+    <article class="card plain"><h3>Clarity</h3><p>Fixed total cost and plain-English terms. No surprises after you sign.</p></article>
+    <article class="card plain"><h3>Speed</h3><p>A short online application and decisions typically within days.</p></article>
+    <article class="card plain"><h3>Partnership</h3><p>We want your business to succeed long after funding — and we're here if anything changes.</p></article>
+  </div>
+</div></section>
+
+<section class="sec sec-alt"><div class="wrap">
+  <div class="sec-head"><h2>Visit or call us</h2></div>
+  <div class="cards cards-3">
+    <article class="card plain"><h3>Office</h3><p><%= site.address.street %><br><%= site.address.city %>, <%= site.address.state %> <%= site.address.zip %></p></article>
+    <article class="card plain"><h3>Phone</h3><p><a href="<%= site.phoneHref %>"><%= site.phone %></a></p></article>
+    <article class="card plain"><h3>Hours</h3><p><%= site.hours %><br>Closed Saturday &amp; Sunday</p></article>
+  </div>
+</div></section>
+<%- include('partials/foot') %>

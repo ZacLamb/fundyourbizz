@@ -1,0 +1,171 @@
+<%- include('partials/head') %>
+<%
+  const states = ['AL','AK','AZ','AR','CA','CO','CT','DE','DC','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','PR','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+  const types = ['Sole Proprietorship','LLC','Corporation','Partnership','Limited Partnership','General Partnership','Legal Partnership','Not-for-Profit','Public','Other'];
+  const stateOpts = '<option value="">Select</option>' + states.map(s => `<option>${s}</option>`).join('');
+%>
+<section class="apply-hero">
+  <div class="wrap">
+    <p class="eyebrow">Secure application</p>
+    <h1>Apply for business funding</h1>
+    <p class="lead">About 10 minutes. Have your EIN and last four months of business bank statements ready.</p>
+  </div>
+</section>
+
+<section class="apply-sec">
+  <div class="wrap apply-grid">
+    <aside class="apply-side">
+      <ol class="stepper" id="stepper">
+        <li data-step="0" class="on"><span>1</span>Business</li>
+        <li data-step="1"><span>2</span>Financials</li>
+        <li data-step="2"><span>3</span>Owner</li>
+        <li data-step="3"><span>4</span>Partner</li>
+        <li data-step="4"><span>5</span>Bank statements</li>
+        <li data-step="5"><span>6</span>Sign &amp; submit</li>
+      </ol>
+      <div class="side-note">
+        <strong>🔒 Your information is encrypted</strong>
+        <p>We use it only to evaluate your funding request.</p>
+        <p>Questions? <a href="<%= site.phoneHref %>"><%= site.phone %></a></p>
+      </div>
+    </aside>
+
+    <form id="appForm" class="panel app-form" novalidate enctype="multipart/form-data">
+      <div class="progress"><div class="bar" id="bar"></div></div>
+      <p class="step-count" id="stepCount">Step 1 of 6</p>
+
+      <!-- STEP 1: Business -->
+      <fieldset class="step" data-step="0">
+        <legend>Enter your business information</legend>
+        <div class="grid2">
+          <label>Legal business name *<input name="organization" required autocomplete="organization"></label>
+          <label>DBA *<input name="dba" required placeholder="Same as legal name if none"></label>
+          <label>Legal business type *
+            <select name="legal_business_type" required><option value="">Select</option><% types.forEach(t => { %><option><%= t %></option><% }) %></select>
+          </label>
+          <label>Industry *<input name="industry" required placeholder="e.g. Restaurant, Trucking"></label>
+          <label>EIN *<input name="ein" required inputmode="numeric" placeholder="XX-XXXXXXX" data-mask="ein" maxlength="10"></label>
+          <label>Business start date *<input name="business_start_date_v2" type="date" required></label>
+          <label>Website<input name="website" type="url" placeholder="https://"></label>
+          <label>Business phone<input name="business_phone" type="tel" data-mask="phone" placeholder="(555) 555-5555"></label>
+        </div>
+        <label>Business address *<input name="business_address" required autocomplete="address-line1"></label>
+        <div class="grid3">
+          <label>City *<input name="business_city" required></label>
+          <label>State *<select name="business_state" required><%- stateOpts %></select></label>
+          <label>ZIP *<input name="business_zip" required inputmode="numeric" maxlength="10"></label>
+        </div>
+        <div class="radio-row">
+          <span class="rlabel">Do you rent or own your business space?</span>
+          <label class="pill"><input type="radio" name="do_you_rent_or_own_your_business_space" value="Rent"><span>Rent</span></label>
+          <label class="pill"><input type="radio" name="do_you_rent_or_own_your_business_space" value="Mortgage/Own"><span>Mortgage / Own</span></label>
+        </div>
+        <label>Business description *<textarea name="business_description" rows="3" required placeholder="What does your business do?"></textarea></label>
+      </fieldset>
+
+      <!-- STEP 2: Financials -->
+      <fieldset class="step" data-step="1" hidden>
+        <legend>Financial information</legend>
+        <div class="grid2">
+          <label>Funding amount requested *<div class="money"><input name="requested_amount" required inputmode="numeric" data-mask="money" placeholder="50,000"></div></label>
+          <label>Average monthly revenue *<div class="money"><input name="revenue" required inputmode="numeric" data-mask="money" placeholder="40,000"></div></label>
+        </div>
+        <label>Use of funds *<input name="use_of_funds" required placeholder="e.g. Inventory, payroll, equipment"></label>
+        <div class="radio-row">
+          <span class="rlabel">Do you currently have funding from another lender? *</span>
+          <label class="pill"><input type="radio" name="do_you_currently_have_funding_from_another_lender" value="Yes" required><span>Yes</span></label>
+          <label class="pill"><input type="radio" name="do_you_currently_have_funding_from_another_lender" value="No"><span>No</span></label>
+        </div>
+        <label class="w-sm">Your ownership % *<div class="pct"><input name="owner_ownership_percent" required inputmode="numeric" type="number" min="1" max="100"></div></label>
+      </fieldset>
+
+      <!-- STEP 3: Owner -->
+      <fieldset class="step" data-step="2" hidden>
+        <legend>Owner information</legend>
+        <label>Full name *<input name="full_name" required autocomplete="name"></label>
+        <label>Home street address *<input name="address" required autocomplete="address-line1"></label>
+        <div class="grid3">
+          <label>City *<input name="city" required autocomplete="address-level2"></label>
+          <label>State *<select name="state" required><%- stateOpts %></select></label>
+          <label>ZIP *<input name="postal_code" required inputmode="numeric" autocomplete="postal-code" maxlength="10"></label>
+        </div>
+        <div class="grid2">
+          <label>Email *<input name="email" type="email" required autocomplete="email"></label>
+          <label>Mobile phone *<input name="phone" type="tel" required autocomplete="tel" data-mask="phone" placeholder="(555) 555-5555"></label>
+          <label>Social Security number *<input name="social_security_number" required inputmode="numeric" data-mask="ssn" placeholder="XXX-XX-XXXX" maxlength="11" autocomplete="off"></label>
+          <label>Date of birth *<input name="date_of_birth" type="date" required autocomplete="bday"></label>
+          <label>Estimated credit score *<input name="credit_score" required type="number" inputmode="numeric" min="300" max="850" placeholder="300–850"></label>
+        </div>
+      </fieldset>
+
+      <!-- STEP 4: Partner -->
+      <fieldset class="step" data-step="3" hidden>
+        <legend>Partner information</legend>
+        <div class="radio-row">
+          <span class="rlabel">Is there a second owner or partner?</span>
+          <label class="pill"><input type="radio" name="has_partner" value="yes"><span>Yes</span></label>
+          <label class="pill"><input type="radio" name="has_partner" value="no" checked><span>No, just me</span></label>
+        </div>
+        <div id="partnerFields" hidden>
+          <div class="grid2">
+            <label>Partner first name *<input name="partner_first_name" data-partner></label>
+            <label>Partner last name *<input name="partner_last_name" data-partner></label>
+            <label>Partner email *<input name="partner_email" type="email" data-partner></label>
+            <label>Partner SSN *<input name="partner_ssn" inputmode="numeric" data-mask="ssn" placeholder="XXX-XX-XXXX" maxlength="11" autocomplete="off" data-partner></label>
+            <label>Partner date of birth *<input name="partner_date_of_birth_v2" type="date" data-partner></label>
+          </div>
+          <label>Partner home address *<textarea name="partner_address" rows="2" placeholder="Street, city, state, ZIP" data-partner></textarea></label>
+        </div>
+      </fieldset>
+
+      <!-- STEP 5: Bank statements -->
+      <fieldset class="step" data-step="4" hidden>
+        <legend>Upload your last 4 months of business bank statements</legend>
+        <p class="hint">PDF downloads from your bank work best. JPG or PNG photos are fine too. Up to 25 MB each.</p>
+        <div class="drops">
+          <% ['Most recent month','2 months ago','3 months ago','4 months ago'].forEach((lbl, i) => { %>
+          <label class="drop" data-drop>
+            <input type="file" name="bank_statement_<%= i+1 %>" accept=".pdf,.jpg,.jpeg,.png,.heic,application/pdf,image/*" required>
+            <span class="drop-n">Statement <%= i+1 %></span>
+            <span class="drop-l"><%= lbl %></span>
+            <span class="drop-f">Choose file or drag it here</span>
+          </label>
+          <% }) %>
+        </div>
+      </fieldset>
+
+      <!-- STEP 6: Sign -->
+      <fieldset class="step" data-step="5" hidden>
+        <legend>Last step: sign and certify</legend>
+        <div class="sig-block">
+          <div class="sig-head"><span>Owner signature *</span><button type="button" class="link-btn" data-clear="signature">Clear</button></div>
+          <canvas class="sig" id="sig_signature" aria-label="Draw your signature"></canvas>
+          <input type="hidden" name="signature_data">
+          <label class="w-sm">Signature date *<input name="signature_date" type="date" required></label>
+        </div>
+        <div class="sig-block" id="secondSig" hidden>
+          <div class="sig-head"><span>Second owner signature</span><button type="button" class="link-btn" data-clear="second_owner_signature">Clear</button></div>
+          <canvas class="sig" id="sig_second_owner_signature" aria-label="Second owner signature"></canvas>
+          <input type="hidden" name="second_owner_signature_data">
+          <label class="w-sm">Second owner signature date<input name="second_owner_signature_date" type="date"></label>
+        </div>
+        <div class="terms-box"><%- include('partials/authorization') %></div>
+        <label class="check"><input type="checkbox" name="terms_accepted" value="yes" required> <span>I agree to the <a href="/terms-and-conditions" target="_blank">terms &amp; conditions</a> and the authorization above.</span></label>
+        <input type="text" name="company_website_hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </fieldset>
+
+      <p class="form-msg" id="formMsg" role="alert"></p>
+      <div class="nav-btns">
+        <button type="button" class="btn btn-outline" id="backBtn" hidden>← Back</button>
+        <button type="button" class="btn btn-green" id="nextBtn">Continue →</button>
+        <button type="submit" class="btn btn-green" id="submitBtn" hidden>Submit Application</button>
+      </div>
+      <div class="uploading" id="uploading" hidden>
+        <div class="spinner"></div>
+        <p><strong>Submitting your application…</strong><br>Uploading bank statements can take up to a minute. Please keep this page open.</p>
+      </div>
+    </form>
+  </div>
+</section>
+<script src="/js/apply.js?v=3" defer></script>
+<%- include('partials/foot') %>
